@@ -10,19 +10,19 @@ body {
   }
   
   .calculator {
-    background: #ffffff;
-    border-radius: 20px;    
-    box-shadow: 0 10px 25px rgba(30, 136, 229, 0.2);
+    background: #ffffff61;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 25px rgb(30 136 229 / 72%);
     width: 100%;
     max-width: 400px;
-    padding: 20px;
+    padding: 1.5rem;
   }
   
   .display {
     background: #ffffff;
     padding: 20px;
     font-size: 2rem;
-    border-radius: 12px;
+    border-radius: 1.5rem;
     text-align: right;
     border: 2px solid #1e88e5;
     color: #1e88e5;
@@ -37,12 +37,13 @@ body {
   }
   
   .btn {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    font-weight: 600;
     padding: 20px;
-    background: #e3f2fd;
-    color: #222;
+    background: #64b9ffa3;
+    color: #000405  ;
     border: none;
-    border-radius: 12px;
+    border-radius: 50px;
     cursor: pointer;
     transition: 0.2s ease;
   }
@@ -61,17 +62,18 @@ body {
   
   .btn[data-action="clear"],
   .btn[data-action="="] {
-    background-color: #fc4f1b;
+    background-color: gold;
     color: #fff;
   }
   
   .btn[data-action="M+"],
-  
   .btn[data-action="M-"],
   .btn[data-action="MR"],
-  .btn[data-action="MC"] {
-    background-color: #90caf9;
-    color: #000;
+  .btn[data-action="MC"],
+  .btn[data-action="square"],
+  .btn[data-action="sqrt"]  {
+    background-color: #209afe;
+    color: #fff;
   }
   
   @media (max-width: 600px) {
