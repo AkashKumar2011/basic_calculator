@@ -1,0 +1,87 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f5f9ff;
+    color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .calculator {
+    background: #ffffff;
+    border-radius: 20px;    
+    box-shadow: 0 10px 25px rgba(30, 136, 229, 0.2);
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+  }
+  
+  .display {
+    background: #ffffff;
+    padding: 20px;
+    font-size: 2rem;
+    border-radius: 12px;
+    text-align: right;
+    border: 2px solid #1e88e5;
+    color: #1e88e5;
+    margin-bottom: 15px;
+    overflow-x: auto;
+  }
+  
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  
+  .btn {
+    font-size: 1.2rem;
+    padding: 20px;
+    background: #e3f2fd;
+    color: #222;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+  
+  .btn:hover {
+    background: #bbdefb;
+  }
+  
+  .btn[data-action="+"] ,
+  .btn[data-action="-"] ,
+  .btn[data-action="*"] ,
+  .btn[data-action="/"] {
+    background-color: #1e88e5;
+    color: #fff;
+  }
+  
+  .btn[data-action="clear"],
+  .btn[data-action="="] {
+    background-color: #fc4f1b;
+    color: #fff;
+  }
+  
+  .btn[data-action="M+"],
+  
+  .btn[data-action="M-"],
+  .btn[data-action="MR"],
+  .btn[data-action="MC"] {
+    background-color: #90caf9;
+    color: #000;
+  }
+  
+  @media (max-width: 600px) {
+    .btn {
+      padding: 15px;
+      font-size: 1rem;
+    }
+  
+    .display {
+      font-size: 1.5rem;
+    }
+  }
+  
