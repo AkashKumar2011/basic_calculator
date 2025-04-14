@@ -14,12 +14,17 @@ buttons.forEach(button => {
     const action = button.dataset.action;
 
     if (number !== undefined) {
-      if (currentInput === "0") currentInput = number;
+      if (currentInput === "0" || currentInput === "00") currentInput = number;
       else currentInput += number;
     } else if (action) {
       switch (action) {
         case "clear":
           currentInput = "0";
+          break;
+        case "del":
+          // Remove last character
+          currentInput = currentInput.slice(0, -1);
+          if (currentInput === "") currentInput = "0";
           break;
         case "+":
         case "-":
@@ -35,6 +40,7 @@ buttons.forEach(button => {
           break;
         case "sqrt":
           try {
+            //eval() is a JavaScript function that takes a string as input and executes it as JavaScript code.
             currentInput = Math.sqrt(eval(currentInput)).toString();
           } catch {
             currentInput = "Error";
@@ -54,21 +60,31 @@ buttons.forEach(button => {
             currentInput = "Error";
           }
           break;
-        case "M+":
+        case "m+":
           try {
             memory += eval(currentInput);
-          } catch {}
+            currentInput = "0";
+            console.log(memory);
+          } catch {
+            memory = 0;
+          }
           break;
-        case "M-":
+        case "m-":
           try {
             memory -= eval(currentInput);
-          } catch {}
+            currentInput = "0";
+            console.log(memory);
+          } catch {
+            memory = 0;
+          }
           break;
-        case "MR":
+        case "mr":
           currentInput = memory.toString();
+          console.log(memory);
           break;
-        case "MC":
+        case "mc":
           memory = 0;
+          console.log(memory);
           break;
       }
     }

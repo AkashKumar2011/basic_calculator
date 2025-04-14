@@ -11,18 +11,18 @@ body {
   
   .calculator {
     background: #ffffff61;
-    border-radius: 1.5rem;
+    border-radius: 1rem;
     box-shadow: 0 10px 25px rgb(30 136 229 / 72%);
     width: 100%;
-    max-width: 400px;
+    max-width: 20rem;
     padding: 1.5rem;
   }
   
   .display {
     background: #ffffff;
-    padding: 20px;
+    padding: 1rem;
     font-size: 2rem;
-    border-radius: 1.5rem;
+    border-radius: .5rem;
     text-align: right;
     border: 2px solid #1e88e5;
     color: #1e88e5;
@@ -33,17 +33,17 @@ body {
   .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    gap: 0.5rem;
   }
   
   .btn {
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: 600;
-    padding: 20px;
+    padding: .7rem 1rem;
     background: #64b9ffa3;
     color: #000405  ;
     border: none;
-    border-radius: 50px;
+    border-radius: .5rem;
     cursor: pointer;
     transition: 0.2s ease;
   }
@@ -55,7 +55,11 @@ body {
   .btn[data-action="+"] ,
   .btn[data-action="-"] ,
   .btn[data-action="*"] ,
-  .btn[data-action="/"] {
+  .btn[data-action="/"] ,
+  .btn[data-action="mod"] ,
+  .btn[data-action="square"] ,
+  .btn[data-action="sqrt"] ,
+  .btn[data-number="00"] {
     background-color: #1e88e5;
     color: #fff;
   }
@@ -65,14 +69,17 @@ body {
     background-color: gold;
     color: #fff;
   }
+
+  .btn[data-action="del"] {
+    background-color: rgb(182, 133, 0);
+    color: #fff;
+  }
   
   .btn[data-action="M+"],
   .btn[data-action="M-"],
   .btn[data-action="MR"],
-  .btn[data-action="MC"],
-  .btn[data-action="square"],
-  .btn[data-action="sqrt"]  {
-    background-color: #209afe;
+  .btn[data-action="MC"] {
+    background-color: #005ba5;
     color: #fff;
   }
   
@@ -87,3 +94,10 @@ body {
     }
   }
   
+
+  .span-col-two {
+    grid-column: span 2;
+  }
+  .span-row-two {
+    grid-row: span 2;
+  }
