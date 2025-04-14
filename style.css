@@ -1,7 +1,7 @@
 body {
     font-family: 'Segoe UI', sans-serif;
     background: #f5f9ff;
-    color: #222;
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,22 +10,22 @@ body {
   }
   
   .calculator {
-    background: #ffffff61;
+    background: #fff;
     border-radius: 1rem;
-    box-shadow: 0 10px 25px rgb(30 136 229 / 72%);
+    box-shadow: 2px .5rem 1.5rem rgba(2, 131, 244, 0.795);
     width: 100%;
     max-width: 20rem;
     padding: 1.5rem;
   }
   
   .display {
-    background: #ffffff;
+    background: #fff;
     padding: 1rem;
     font-size: 2rem;
     border-radius: .5rem;
     text-align: right;
     border: 2px solid #1e88e5;
-    color: #1e88e5;
+    color: #003d71;
     margin-bottom: 15px;
     overflow-x: auto;
   }
@@ -40,8 +40,8 @@ body {
     font-size: 1rem;
     font-weight: 600;
     padding: .7rem 1rem;
-    background: #64b9ffa3;
-    color: #000405  ;
+    background: #007be0e9;
+    color: #fff;
     border: none;
     border-radius: .5rem;
     cursor: pointer;
@@ -49,7 +49,7 @@ body {
   }
   
   .btn:hover {
-    background: #bbdefb;
+    background: #0159a0;
   }
   
   .btn[data-action="+"] ,
@@ -60,26 +60,29 @@ body {
   .btn[data-action="square"] ,
   .btn[data-action="sqrt"] ,
   .btn[data-number="00"] {
-    background-color: #1e88e5;
+    background-color: #839702;
     color: #fff;
   }
   
-  .btn[data-action="clear"],
+  .btn[data-action="clear"]{
+    background-color: orange;
+    color: #fff;
+  }
   .btn[data-action="="] {
-    background-color: gold;
+    background-color: rgba(0, 143, 5, 0.922);
     color: #fff;
   }
 
   .btn[data-action="del"] {
-    background-color: rgb(182, 133, 0);
+    background-color: rgba(250, 45, 4, 0.762);
     color: #fff;
   }
   
-  .btn[data-action="M+"],
-  .btn[data-action="M-"],
-  .btn[data-action="MR"],
-  .btn[data-action="MC"] {
-    background-color: #005ba5;
+  .btn[data-action="m+"],
+  .btn[data-action="m-"],
+  .btn[data-action="mr"],
+  .btn[data-action="mc"] {
+    background-color: #0159a0;
     color: #fff;
   }
   
