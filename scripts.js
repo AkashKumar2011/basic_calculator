@@ -7,6 +7,9 @@ let memory = 0;
 function updateDisplay() {
   display.innerText = currentInput;
 }
+function isOperator(char) {
+  return ["+", "-", "*", "/", "%", "."].includes(char);
+}
 
 buttons.forEach(button => {
   button.addEventListener("click", () => {
@@ -30,14 +33,20 @@ buttons.forEach(button => {
         case "-":
         case "*":
         case "/":
-          currentInput += action;
-          break;
-        case "mod":
-          currentInput += "%";
-          break;
         case ".":
-          currentInput += ".";
+        case "mod":
+        
+          const operator = action === "mod" ? "%" : action;
+
+          // 🛑 Prevent multiple operators
+          if (isOperator(currentInput.slice(-1))) {
+            currentInput = currentInput.slice(0, -1) + operator;
+          } else {
+            currentInput += operator;
+          }
           break;
+
+        
         case "sqrt":
           try {
             //eval() is a JavaScript function that takes a string as input and executes it as JavaScript code.
